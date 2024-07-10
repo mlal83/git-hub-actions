@@ -7,6 +7,7 @@ on:
     branches: 
       - main 
       - demo_branch
+      - 'dev_*'
 jobs:
   gather_info:
     runs-on: ubuntu-latest
