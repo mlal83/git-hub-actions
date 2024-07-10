@@ -4,17 +4,18 @@ name: first workflow demo
 
 # Controls when the workflow will run
 on: workflow_dispatch
+
 jobs:
   my_first_workflow:
     runs-on: ubuntu-latest
     steps: 
      - name: hello world
        run: echo "hello world"
+       
      - name: bit o' wisdom
        run: echo "never eat yellow snow"
+       
      - name: combo execute
        run: |
         echo "hello world"
-        echo "never eat yellow snow!
-
-  
+        echo "never eat yellow snow"

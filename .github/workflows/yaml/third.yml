@@ -1,0 +1,23 @@
+name: Download Code
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download container for testing
+        run: | 
+          docker image pull nginx
+          docker image ls
+          docker container run -d -p 8080:80 nginx
+
+      - name: Test web development 
+        run: |
+          python3 -c "import requests; r = requests.get('http://localhost:8080'); print(r.status_code)"
+          curl -s localhost:8080
+

@@ -5,9 +5,10 @@ jobs:
   deploy: 
     runs-on: ubuntu-latest
     steps:
-      -name: checkout
-       uses: actions/checkout@v4
-      -name: investigate
-       run: 
-        pwd
-        ls -lart
+      - name: checkout
+        uses: actions/checkout@v4
+        
+      - name: investigate
+        run: |
+          pwd
+          ls -lart
