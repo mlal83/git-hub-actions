@@ -3,13 +3,14 @@ name: Download Code
 on: [push, pull_request]
 
 jobs:
-  test:
+  code-checkout:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Download code
         uses: actions/checkout@v4
-
+  nginx-deploy-test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Download container for testing
         run: | 
           docker image pull nginx
