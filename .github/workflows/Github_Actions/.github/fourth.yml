@@ -1,0 +1,11 @@
+name: fourth workflow demo
+on:
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+jobs:
+  gather_info:
+    runs-on: ubuntu-latest
+    steps:
+    - name: output info
+      run: echo "${{ toJSON (github)}}"
